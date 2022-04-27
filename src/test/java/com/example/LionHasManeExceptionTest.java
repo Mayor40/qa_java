@@ -14,7 +14,7 @@ public class LionHasManeExceptionTest {
             lion.doesHaveMane();
         } catch (Exception ex) {
             exception = ex;
-            assertEquals("Используйте допустимые значения пола животного - самей или самка", exception.getMessage());
+            assertEquals("Incorrect exception message", "Используйте допустимые значения пола животного - самей или самка", exception.getMessage());
         }
     }
 }

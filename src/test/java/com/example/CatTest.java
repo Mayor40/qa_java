@@ -5,7 +5,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
@@ -22,15 +21,14 @@ public class CatTest {
         Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
         List<String> actualFood = cat.getFood();
-        Assert.assertEquals(expectedFood, actualFood);
+        Assert.assertEquals("Method getFood returns incorrect value.", expectedFood, actualFood);
     }
 
     @Test
-    public void getSoundTest(){
+    public void getSoundTest() {
         Cat cat = new Cat(feline);
         String expectedSound = "Мяу";
         String actualSound = cat.getSound();
-        Assert.assertEquals(expectedSound, actualSound);
+        Assert.assertEquals("Method getSound returns incorrect value.", expectedSound, actualSound);
     }
-
 }

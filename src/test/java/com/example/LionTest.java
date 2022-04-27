@@ -9,7 +9,6 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
 
-import static org.mockito.Mockito.spy;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LionTest {
@@ -22,7 +21,7 @@ public class LionTest {
         Lion lion = new Lion(feline);
         Mockito.when(feline.getKittens()).thenReturn(100);
         int actualKittens = lion.getKittens();
-        Assert.assertEquals(feline.getKittens(), actualKittens);
+        Assert.assertEquals("Method getKittens returns incorrect value.", feline.getKittens(), actualKittens);
     }
 
     @Test
@@ -30,6 +29,6 @@ public class LionTest {
         Lion lion = new Lion(feline);
         Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         List<String> actualFood = lion.getFood();
-        Assert.assertEquals(feline.getFood("Хищник"), actualFood);
+        Assert.assertEquals("Method getFood returns incorrect value.", feline.getFood("Хищник"), actualFood);
     }
 }

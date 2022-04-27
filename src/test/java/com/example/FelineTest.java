@@ -3,8 +3,6 @@ package com.example;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.sql.Array;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -17,30 +15,32 @@ public class FelineTest {
         Feline feline = spy(new Feline());
         List<String> expectedFood = Arrays.asList("Животные", "Птицы", "Рыба");
         List<String> actualFood = feline.eatMeat();
-        Assert.assertEquals(expectedFood, actualFood);
+        Assert.assertEquals("Method eatMeat returns incorrect value.", expectedFood, actualFood);
     }
 
 
     @Test
-    public void getFamilyTest(){
+    public void getFamilyTest() {
         Feline feline = new Feline();
         String expectedFamily = "Кошачьи";
         String actualFamily = feline.getFamily();
-        Assert.assertEquals(expectedFamily, actualFamily);
+        Assert.assertEquals("Method getFamily returns incorrect value.", expectedFamily, actualFamily);
     }
+
     @Test
-    public void getKittensOneKittenTest(){
+    public void getKittensOneKittenTest() {
         Feline feline = new Feline();
         int expectedKittensCount = 1;
         int actualKittensCount = feline.getKittens();
-        Assert.assertEquals(expectedKittensCount, actualKittensCount);
+        Assert.assertEquals("Method getKittens returns incorrect value.", expectedKittensCount, actualKittensCount);
     }
+
     @Test
-    public void getKittensRandomNumberTest(){
+    public void getKittensRandomNumberTest() {
         Feline feline = new Feline();
         int kittensCount = 10;
         int expectedKittensCount = 10;
         int actualKittensCount = feline.getKittens(kittensCount);
-        Assert.assertEquals(expectedKittensCount, actualKittensCount);
+        Assert.assertEquals("Method getKittens returns incorrect value.", expectedKittensCount, actualKittensCount);
     }
 }
